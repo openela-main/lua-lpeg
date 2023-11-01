@@ -1,0 +1,25 @@
+From 98ff554e5604b99aa5653e37b207d9e31df6637f Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 21 Sep 2018 12:55:14 +0200
+Subject: [PATCH] Enable execshield ldflags
+
+---
+ makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/makefile b/makefile
+index 7a8463e..a1e09ed 100644
+--- a/makefile
++++ b/makefile
+@@ -29,7 +29,7 @@ FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
+ 
+ # For Linux
+ linux:
+-	make lpeg.so "DLLFLAGS = -shared -fPIC"
++	make lpeg.so "DLLFLAGS = -shared -fPIC -Wl,-z,now"
+ 
+ # For Mac OS
+ macosx:
+-- 
+2.17.1
+
